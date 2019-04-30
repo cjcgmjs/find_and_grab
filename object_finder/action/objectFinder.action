@@ -1,0 +1,38 @@
+#objectFinder.action
+#goal:
+#object ID codes 
+int32 GEARBOX_TOP=101
+int32 GEARBOX_BOTTOM=102
+int32 BOLT = 103
+int32 SMALL_GEAR =104
+int32 LARGE_GEAR = 105
+
+#goal fields to fill in:
+int32 object_id
+
+#boolean to declare if object is on a horizontal surface of known height:
+bool known_surface_ht
+
+#if surface ht is known, fill it in
+float32 surface_ht
+
+---
+#result
+int32 SUCCESS =0 
+int32 OBJECT_FOUND=0 #synonym for SUCCESS
+int32 OBJECT_NOT_FOUND=1
+int32 OBJECT_CODE_NOT_RECOGNIZED=2
+int32 OBJECT_FINDER_BUSY=3
+int32 OBJECT_FINDER_CANCELLED=4
+
+#return the identified poses here:
+int32 found_object_code
+geometry_msgs/PoseStamped[] object_poses
+int32 object_id
+---
+#feedback: optional; 
+#int32 OBJECT_FINDER_BUSY=3 
+int32 fdbk
+
+
+
