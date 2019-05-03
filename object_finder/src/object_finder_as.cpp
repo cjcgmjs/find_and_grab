@@ -793,9 +793,9 @@ bool ObjectFinder::find_large_gear(vector<float> x_centroids_wrt_robot, vector<f
     geometry_msgs::PoseStamped object_pose;
     object_poses.clear();
     int n_objects = x_centroids_wrt_robot.size();
-    if (n_objects < 2) return false; //background is object 0
-    object_pose.header.frame_id = "torso_lift_link";
-    for (int i_object = 1; i_object < n_objects; i_object++) {
+    if (n_objects < 1) return false; //background is object 0
+    object_pose.header.frame_id = "torso";
+    for (int i_object = 0; i_object < n_objects; i_object++) {
         object_pose.pose.position.x = x_centroids_wrt_robot[i_object];
         object_pose.pose.position.y = y_centroids_wrt_robot[i_object];
         object_pose.pose.position.z = table_height + TABLE_GRASP_CLEARANCE;

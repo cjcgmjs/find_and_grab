@@ -74,7 +74,7 @@ int main(int argc, char** argv) {
     //tool_pose.pose.position.z -= 0.2; // descend 20cm, along z in torso frame
     ROS_INFO("planning Cartesian move to goal pose w/ dpx = 0.2"); //, dpy = -0.2");
     //tool_pose.pose.position.y -= 0.2; // move 20cm, along y in torso frame
-    tool_pose.pose.position.x += 0.2; // move 20cm, along x in torso frame
+    tool_pose.pose.position.z -= 0.2; // move 20cm, along x in torso frame
     // send move plan request:
     rtn_val=arm_motion_commander.plan_path_current_to_goal_gripper_pose(tool_pose);
     //send command to execute planned motion
